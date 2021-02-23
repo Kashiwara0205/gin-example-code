@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  has-gorira-api:
+    container_name: has-gorira-api
+    build: 
+      context: .
+    volumes:
+      - ./hasGoriraAPI:/hasGoriraAPI
+    ports:
+      - 5050:5050
+    tty:
+      true
