@@ -1,13 +1,31 @@
 version: '3'
 
+volumes:
+  db-volume:
+
 services:
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: db
+    ports:
+    - 13306:3306
+    volumes:
+      - db-volume:/var/lib/mysql
+ 
   has-gorira-api:
     container_name: has-gorira-api
     build: 
-      context: .
+      context: ./hasGoriraAPI
     volumes:
       - ./hasGoriraAPI:/hasGoriraAPI
     ports:
       - 5050:5050
     tty:
       true
+    depends_on:
+      - db
