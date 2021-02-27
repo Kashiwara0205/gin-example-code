@@ -73,11 +73,11 @@ func createPrefectureSeedData(connection *gorm.DB){
 
 func createZooSeedData(connection *gorm.DB){
 	zoos := []model.Zoo{
-		{ PrefId: 1, Name: "北海道ゴリラ大学", HasGorira:true },
-		{ PrefId: 12, Name: "ぽんぽこ動物園", HasGorira:false },
-		{ PrefId: 3, Name: "わにわに博物館", HasGorira:false },
-		{ PrefId: 33, Name: "ゴリラの里", HasGorira:true },
-		{ PrefId: 22, Name: "白鳥の森", HasGorira:false },
+		{ PrefId: 1,  Name: "北海道ゴリラ大学", HasGorira:true },
+		{ PrefId: 12, Name: "ぽんぽこ動物園",   HasGorira:false },
+		{ PrefId: 3,  Name: "わにわに博物館",   HasGorira:false },
+		{ PrefId: 33, Name: "ゴリラの里",      HasGorira:true },
+		{ PrefId: 22, Name: "白鳥の森",        HasGorira:false },
 	}
 	
 	for _, zoo := range zoos {
