@@ -12,6 +12,7 @@ func main() {
 	defer connection.Close()
 
 	createPrefectureSeedData(connection)
+	createZooSeedData(connection)
 }
 
 func createPrefectureSeedData(connection *gorm.DB){
@@ -68,5 +69,15 @@ func createPrefectureSeedData(connection *gorm.DB){
 	for _, val := range names {
 		pref := model.Prefecture{Name: val}
 		connection.Create(&pref)
+	}
+}
+
+func createZooSeedData(connection *gorm.DB){
+	zoos := []model.Zoo{
+		{ PrefId: 1, Name: "北海道ゴリラ大学", HasGorira:true },
+	}
+	
+	for _, zoo := range zoos {
+		connection.Create(&zoo)
 	}
 }

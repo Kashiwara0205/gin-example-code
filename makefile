@@ -9,3 +9,16 @@ migrate_redo:
 
 seed:
 	sudo docker exec -it has-gorira-api go run /hasGoriraAPI/app/seed/seed.go
+
+up:
+	sudo docker-compose up
+
+down:
+	sudo docker-compose down
+	sudo docker volume rm hasgoriraapi_db-volume
+
+in:
+	sudo docker exec -ti has-gorira-api /bin/bash
+
+in_db:
+	sudo docker exec -ti db /bin/bash
