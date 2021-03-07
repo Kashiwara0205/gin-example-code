@@ -1,4 +1,4 @@
-# hasGoriraAPI
+# gin-example-code
 
 API server made as a trial
 
